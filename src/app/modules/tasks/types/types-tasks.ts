@@ -5,6 +5,7 @@ export interface IPerson {
 }
 
 export interface ITask {
+    id: number,
     taskName: string;
     deadline: Date;
     completed: boolean;

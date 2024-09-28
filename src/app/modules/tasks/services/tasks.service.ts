@@ -24,13 +24,15 @@ export class TasksService {
     return 'success'
   }
 
-  updateItemStatus(index: number, newStatus: boolean, array: ITask[]): ITask[] {
-    const items = array
-    if (index >= 0 && index < items.length) {
-      items[index].completed = newStatus;
+  updateItemStatus(id: number, newStatus: boolean, array: ITask[]): ITask[] {
+    const items = array;
+    const item = items.find(task => task.id === id);
+    
+    if (item) {
+      item.completed = newStatus;
       this.updateAllTasks(items);
       return items;
-    }else {
+    } else {
       return [];
     }
   }

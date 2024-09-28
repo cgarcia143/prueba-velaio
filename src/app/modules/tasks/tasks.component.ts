@@ -60,6 +60,7 @@ export class TasksComponent implements OnInit, OnDestroy, AfterViewInit {
     const formDialog = this._matDialog.open(FormTasksComponent, {
         autoFocus: false,
         disableClose: true,
+        data: this.tasks.length + 1 
     });
 
     formDialog.afterClosed().subscribe((data) => {

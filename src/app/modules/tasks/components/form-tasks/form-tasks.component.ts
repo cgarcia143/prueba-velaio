@@ -18,6 +18,7 @@ export class FormTasksComponent {
     private fb: FormBuilder,
     ) {
     this.taskForm = this.fb.group({
+      id: [this.data, Validators.required],
       taskName: ['', Validators.required],
       deadline: ['', Validators.required],
       completed: [false, Validators.required],
